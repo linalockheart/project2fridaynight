@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <title>Happy Hour Search</title>
+</head>
+
+<body>
+    <h1> Make every hour, happy hour!</h1>
+
+    <form>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Search for Happy Hour Venue</label>
+            <textarea class="form-control" id="search" rows="3"></textarea>
+
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1"> Location</label>
+            <textarea class="form-control" id="location" rows="3"></textarea>
+
+        </div>
+        <button type="button" id="submit" class="btn btn-outline-primary btn-lg">Search</button>
+    </form>
+    <div id="results">
+    </div>
+    <div id="locationMap">
+
+    </div>
+    <script>
+        $("#submit").on("click", function (event) {
+            event.preventDefault();
+            var newSearch = {
+                name: $("#search").val().trim(),
+                location: $("#location").val().trim()
+            }
+
+            $.post("/api", newSearch)
+                .then(function (data) {
+                    console.log(data)
+                    alert("searching venues");
+                    $("#results").text(JSON.stringify(data.response.venues[0]));
+                })
+            $.post("/api", newSearch)
+                .then(function (data) {
+                    console.log(data)
+                    alert("searching location");
+                    $("#locationMap").text(JSON.stringify(data.response.venues[0]));
+                })
+        })
+    </script>
+</body>
+
+</html>

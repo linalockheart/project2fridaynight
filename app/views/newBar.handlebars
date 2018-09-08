@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <title>Happy Hour Search</title>
+</head>
+
+<body>
+
+    <div id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-8 offset-2">
+                    
+                    <h1> Make every hour, happy hour!</h1>
+
+
+                    {{#each venues}}
+                    <li>
+                        <p>ID: {{this.id}}</p>
+                        <p>bar: {{this.name}}</p>
+                        <p>address:{{this.address}}</p>
+                        <p>How to get there</p>
+                        <button>directions</button>
+                        <button>uber</button>
+                        <button>new search</button>
+                    </li>
+                    {{/each}}
+                    </ul>

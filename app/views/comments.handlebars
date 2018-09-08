@@ -1,0 +1,158 @@
+{{!-- Hello World<BR> --}}
+{{!-- Venue Id = {{fsVenueId}}<br>
+Venue Name = {{fsVenueData.name}}<br>
+Venue Street = {{fsVenueData.location.address}}<br>
+Venue City = {{fsVenueData.location.city}}<br>
+Venue State = {{fsVenueData.location.state}}<br>
+Venue Country = {{fsVenueData.location.country}}<br>
+Venue Zip = {{fsVenueData.location.postalCode}}<br>
+Venue Cross Street = {{fsVenueData.location.crossStreet}}<br>
+User Name = {{fbUser.displayName}}<br>
+RouteName = {{routeName}} --}}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<body>
+  <div id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-8 offset-2">
+
+<h1><center>{{fsVenueData.name}}</center></h1>
+
+{{!-- embed map --}}
+<iframe class="map" width="600" height="450" frameborder="0" style="border:0" src="" allowfullscreen>
+</iframe>
+
+
+
+{{!-- Google Map Script --}}
+<script>
+var barAddress = "{{fsVenueData.location.address}}";
+console.log(barAddress);
+
+function validateBarAddress() {
+    //event.preventDefault();
+      
+      var barAddressArray = barAddress.split("");
+  
+      for (let i = 0; i < barAddressArray.length; i++) {
+  
+        if (barAddressArray[i] === " ") {
+          barAddressArray.splice(i, 1, "%20");
+          barAddress = barAddressArray.join("");
+          console.log(barAddress);
+
+          var embedMap = "https://www.google.com/maps/embed/v1/directions?origin=";
+          var currentLocation = "3401%20grays%20ferry%20ave" + "&destination=";
+          var key = "&key=" + "AIzaSyBUl9Z7Ak1vui_beP6_dTINgbnB9aNl5b4";
+          //"HIDE API KEY BEFORE UPLOADING ANYWHERE"
+
+          var src = embedMap + currentLocation + barAddress + key;
+
+          $(".map").attr("src", src);
+
+        }
+      };
+};
+
+validateBarAddress(event); 
+</script>
+
+<div class="container">
+    <center><div class="row">
+        <div class="col-md-2">
+          <form action="/api/comments" method="POST">
+            <input type="hidden" id="fsVenueId" name="fsVenueId" value="{{fsVenueId}}">
+            <input type="hidden" id="fsVenueName" name="fsVenueName" value="{{fsVenueName}}">
+            <input type="hidden" id="fbUserId" name="fbUserId" value="{{fbUser.id}}">
+            <input type="hidden" id="fbUserDisplayName" name="fbUserDisplayName" value="{{fbUser.displayName}}">
+            <input type="hidden" id="routeName" name="routeName" value="{{routeName}}">
+            <center><button type="submit" id="newComment" name="newComment" value="Good Beer!" class="btn btn-outline-primary btn-lg"><i class="fas fa-beer fa-3x"></i></button></i></center>
+            
+          </form>
+       
+        </div>
+        <div class="col-md-2">
+          <form action="/api/comments" method="POST">
+            <input type="hidden" id="fsVenueId" name="fsVenueId" value="{{fsVenueId}}">
+            <input type="hidden" id="fsVenueName" name="fsVenueName" value="{{fsVenueName}}">
+            <input type="hidden" id="fbUserId" name="fbUserId" value="{{fbUser.id}}">
+            <input type="hidden" id="fbUserDisplayName" name="fbUserDisplayName" value="{{fbUser.displayName}}">
+            <input type="hidden" id="routeName" name="routeName" value="{{routeName}}">
+            <center><button type="submit" id="newComment" name="newComment" value="Great food!" class="btn btn-outline-primary btn-lg"><i class="fas fa-utensils fa-3x"></i></button></i></center>
+            
+          </form>
+        </div>
+        <div class="col-md-2">
+          <form action="/api/comments" method="POST">
+            <input type="hidden" id="fsVenueId" name="fsVenueId" value="{{fsVenueId}}">
+            <input type="hidden" id="fsVenueName" name="fsVenueName" value="{{fsVenueName}}">
+            <input type="hidden" id="fbUserId" name="fbUserId" value="{{fbUser.id}}">
+            <input type="hidden" id="fbUserDisplayName" name="fbUserDisplayName" value="{{fbUser.displayName}}">
+            <input type="hidden" id="routeName" name="routeName" value="{{routeName}}">
+            <center><button type="submit" id="newComment" name="newComment" value="Excellent wine!" class="btn btn-outline-primary btn-lg"><i class="fas fa-wine-glass-alt fa-3x"></i></button></i></center>
+            
+          </form>
+        </div>
+        <div class="col-md-2">
+          <form action="/api/comments" method="POST">
+            <input type="hidden" id="fsVenueId" name="fsVenueId" value="{{fsVenueId}}">
+            <input type="hidden" id="fsVenueName" name="fsVenueName" value="{{fsVenueName}}">
+            <input type="hidden" id="fbUserId" name="fbUserId" value="{{fbUser.id}}">
+            <input type="hidden" id="fbUserDisplayName" name="fbUserDisplayName" value="{{fbUser.displayName}}">
+            <input type="hidden" id="routeName" name="routeName" value="{{routeName}}">
+            <center><button type="submit" id="newComment" name="newComment" value="Great prices!" class="btn btn-outline-primary btn-lg"><i class="fas fa-dollar-sign fa-3x"></i></button></i></center>
+            
+          </form>
+        </div>
+        <div class="col-md-2">
+          <form action="/api/comments" method="POST">
+            <input type="hidden" id="fsVenueId" name="fsVenueId" value="{{fsVenueId}}">
+            <input type="hidden" id="fsVenueName" name="fsVenueName" value="{{fsVenueName}}">
+            <input type="hidden" id="fbUserId" name="fbUserId" value="{{fbUser.id}}">
+            <input type="hidden" id="fbUserDisplayName" name="fbUserDisplayName" value="{{fbUser.displayName}}">
+            <input type="hidden" id="routeName" name="routeName" value="{{routeName}}">
+            <center><button type="submit" id="newComment" name="newComment" value="Great cocktails!" class="btn btn-outline-primary btn-lg"><i class="fas fa-cocktail fa-3x"></i></button></i></center>
+            
+          </form>
+        </div>
+        
+    </div></center>
+</div>
+
+
+
+
+
+
+<form action="/api/comments" method="POST">
+  <input type="hidden" id="fsVenueId" name="fsVenueId" value="{{fsVenueId}}">
+  <input type="hidden" id="fsVenueName" name="fsVenueName" value="{{fsVenueName}}">
+  <input type="hidden" id="fbUserId" name="fbUserId" value="{{fbUser.id}}">
+  <input type="hidden" id="fbUserDisplayName" name="fbUserDisplayName" value="{{fbUser.displayName}}">
+  <input type="hidden" id="routeName" name="routeName" value="{{routeName}}">
+  <label for="new-comment">Add a new comment for this venue...</label><br>
+	<textarea type="text" maxlength="255" rows="5" cols="100" id="newComment" name="newComment"></textarea><br>
+	<button type="submit">Submit</button>
+</form>
+
+
+
+<ul>
+{{#each comments }}
+  <div><ul><h4>{{this.fbUserDisplayName}} posted<h2>{{this.body}}</h2> on {{this.createdAt}}<hr size="10"></div>
+{{ else }}
+  <p>no comments yet</p>
+{{/each}}
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>

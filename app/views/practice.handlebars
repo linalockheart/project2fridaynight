@@ -1,0 +1,31 @@
+
+                    
+
+                    <h1> Have you been to {{ this.fsVenueName}} ?</h1>
+                    <p> then share your thoughts below!</p>
+                    
+                    <form>
+
+
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1"> Location</label>
+                            <textarea class="form-control" id="comment" rows="3"></textarea>
+                        </div>
+                        <button type="button" id="submit" class="btn btn-outline-primary btn-lg">Search</button>
+                    </form>
+
+
+                    <h1>Here's what our users said about </h1> {{#if this.fsVenueId}}
+                    <div id="newComment"></div>
+
+                    <ul>
+                        {{#each Comment}}
+                        <li>
+                            <p> Our friend,</p>{{this.fbUserDisplayName}}
+                            <p>said</p>
+                        </li>
+                        <li>{{this.body}}</li>
+                    </ul>
+                    <p> Need directions there?</p>
+                    <button id="directions">Directions</button> --}}
+
