@@ -21,9 +21,10 @@ RouteName = {{routeName}} --}}
 <h1><center>{{fsVenueData.name}}</center></h1>
 
 {{!-- embed map --}}
-<iframe class="map" width="600" height="450" frameborder="0" style="border:0" src="" allowfullscreen>
-</iframe>
-
+<div class="row">
+  <iframe class="map" width="600" height="450" frameborder="0" style="border:0" src="" allowfullscreen>
+  </iframe>
+</div>
 
 
 {{!-- Google Map Script --}}
@@ -45,7 +46,7 @@ function validateBarAddress() {
 
           var embedMap = "https://www.google.com/maps/embed/v1/directions?origin=";
           var currentLocation = "3401%20grays%20ferry%20ave" + "&destination=";
-          var key = "&key=" + "";
+          var key = "&key=" + "AIzaSyBUl9Z7Ak1vui_beP6_dTINgbnB9aNl5b4";
           //"HIDE API KEY BEFORE UPLOADING ANYWHERE"
 
           var src = embedMap + currentLocation + barAddress + key;
@@ -61,7 +62,7 @@ validateBarAddress(event);
 
 <div class="container">
     <center><div class="row">
-        <div class="col-md-2">
+        <div class="col-xs-6 col-sm-6 col-md-3 mt-3">
           <form action="/api/comments" method="POST">
             <input type="hidden" id="fsVenueId" name="fsVenueId" value="{{fsVenueId}}">
             <input type="hidden" id="fsVenueName" name="fsVenueName" value="{{fsVenueName}}">
@@ -73,7 +74,7 @@ validateBarAddress(event);
           </form>
        
         </div>
-        <div class="col-md-2">
+        <div class="col-xs-6 col-sm-6 col-md-3 mt-3">
           <form action="/api/comments" method="POST">
             <input type="hidden" id="fsVenueId" name="fsVenueId" value="{{fsVenueId}}">
             <input type="hidden" id="fsVenueName" name="fsVenueName" value="{{fsVenueName}}">
@@ -84,7 +85,7 @@ validateBarAddress(event);
             
           </form>
         </div>
-        <div class="col-md-2">
+        <div class="col-xs-6 col-sm-6 col-md-3 mt-3">
           <form action="/api/comments" method="POST">
             <input type="hidden" id="fsVenueId" name="fsVenueId" value="{{fsVenueId}}">
             <input type="hidden" id="fsVenueName" name="fsVenueName" value="{{fsVenueName}}">
@@ -95,7 +96,7 @@ validateBarAddress(event);
             
           </form>
         </div>
-        <div class="col-md-2">
+        <div class="col-xs-6 col-sm-6 col-md-3 mt-3">
           <form action="/api/comments" method="POST">
             <input type="hidden" id="fsVenueId" name="fsVenueId" value="{{fsVenueId}}">
             <input type="hidden" id="fsVenueName" name="fsVenueName" value="{{fsVenueName}}">
@@ -106,7 +107,7 @@ validateBarAddress(event);
             
           </form>
         </div>
-        <div class="col-md-2">
+        <div class="col-xs-6 col-sm-6 col-md-3 mt-3 mx-auto">
           <form action="/api/comments" method="POST">
             <input type="hidden" id="fsVenueId" name="fsVenueId" value="{{fsVenueId}}">
             <input type="hidden" id="fsVenueName" name="fsVenueName" value="{{fsVenueName}}">
@@ -133,7 +134,7 @@ validateBarAddress(event);
   <input type="hidden" id="fbUserDisplayName" name="fbUserDisplayName" value="{{fbUser.displayName}}">
   <input type="hidden" id="routeName" name="routeName" value="{{routeName}}">
   <label for="new-comment">Add a new comment for this venue...</label><br>
-	<textarea type="text" maxlength="255" rows="5" cols="100" id="newComment" name="newComment"></textarea><br>
+	<textarea type="text" maxlength="255" rows="5" cols="100" id="newComment" name="newComment" class="mx-auto"></textarea><br>
 	<button type="submit">Submit</button>
 </form>
 
