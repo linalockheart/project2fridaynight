@@ -18,7 +18,7 @@
     
               var embedMap = "https://www.google.com/maps/embed/v1/directions?origin=";
               var currentLocation = "3401%20grays%20ferry%20ave" + "&destination=";
-              var key = "&key=" + "AIzaSyBUl9Z7Ak1vui_beP6_dTINgbnB9aNl5b4";
+              var key = "&key=" + ;
     
               var src = embedMap + currentLocation + barAddress + key;
     
