@@ -69,7 +69,7 @@ validateBarAddress(event);
             <input type="hidden" id="fbUserId" name="fbUserId" value="{{fbUser.id}}">
             <input type="hidden" id="fbUserDisplayName" name="fbUserDisplayName" value="{{fbUser.displayName}}">
             <input type="hidden" id="routeName" name="routeName" value="{{routeName}}">
-            <center><button type="submit" id="newComment" name="newComment" value="Good Beer!" class="btn btn-outline-primary btn-lg"><i class="fas fa-beer fa-3x"></i></button></i></center>
+            <center><button type="submit" id="newComment" name="newComment" value="Good Beer!" class="btn btn-outline-secondary btn-lg"><i class="fas fa-beer fa-3x"></i></button></i></center>
             
           </form>
        
@@ -81,7 +81,7 @@ validateBarAddress(event);
             <input type="hidden" id="fbUserId" name="fbUserId" value="{{fbUser.id}}">
             <input type="hidden" id="fbUserDisplayName" name="fbUserDisplayName" value="{{fbUser.displayName}}">
             <input type="hidden" id="routeName" name="routeName" value="{{routeName}}">
-            <center><button type="submit" id="newComment" name="newComment" value="Great food!" class="btn btn-outline-primary btn-lg"><i class="fas fa-utensils fa-3x"></i></button></i></center>
+            <center><button type="submit" id="newComment" name="newComment" value="Great food!" class="btn btn-outline-secondary btn-lg"><i class="fas fa-utensils fa-3x"></i></button></i></center>
             
           </form>
         </div>
@@ -92,7 +92,7 @@ validateBarAddress(event);
             <input type="hidden" id="fbUserId" name="fbUserId" value="{{fbUser.id}}">
             <input type="hidden" id="fbUserDisplayName" name="fbUserDisplayName" value="{{fbUser.displayName}}">
             <input type="hidden" id="routeName" name="routeName" value="{{routeName}}">
-            <center><button type="submit" id="newComment" name="newComment" value="Excellent wine!" class="btn btn-outline-primary btn-lg"><i class="fas fa-wine-glass-alt fa-3x"></i></button></i></center>
+            <center><button type="submit" id="newComment" name="newComment" value="Excellent wine!" class="btn btn-outline-secondary btn-lg"><i class="fas fa-wine-glass-alt fa-3x"></i></button></i></center>
             
           </form>
         </div>
@@ -103,7 +103,7 @@ validateBarAddress(event);
             <input type="hidden" id="fbUserId" name="fbUserId" value="{{fbUser.id}}">
             <input type="hidden" id="fbUserDisplayName" name="fbUserDisplayName" value="{{fbUser.displayName}}">
             <input type="hidden" id="routeName" name="routeName" value="{{routeName}}">
-            <center><button type="submit" id="newComment" name="newComment" value="Great prices!" class="btn btn-outline-primary btn-lg"><i class="fas fa-dollar-sign fa-3x"></i></button></i></center>
+            <center><button type="submit" id="newComment" name="newComment" value="Great prices!" class="btn btn-outline-secondary btn-lg"><i class="fas fa-dollar-sign fa-3x"></i></button></i></center>
             
           </form>
         </div>
@@ -114,7 +114,7 @@ validateBarAddress(event);
             <input type="hidden" id="fbUserId" name="fbUserId" value="{{fbUser.id}}">
             <input type="hidden" id="fbUserDisplayName" name="fbUserDisplayName" value="{{fbUser.displayName}}">
             <input type="hidden" id="routeName" name="routeName" value="{{routeName}}">
-            <center><button type="submit" id="newComment" name="newComment" value="Great cocktails!" class="btn btn-outline-primary btn-lg"><i class="fas fa-cocktail fa-3x"></i></button></i></center>
+            <center><button type="submit" id="newComment" name="newComment" value="Great cocktails!" class="btn btn-outline-secondary btn-lg"><i class="fas fa-cocktail fa-3x"></i></button></i></center>
             
           </form>
         </div>
@@ -126,17 +126,20 @@ validateBarAddress(event);
 
 
 
-
-<form action="/api/comments" method="POST">
-  <input type="hidden" id="fsVenueId" name="fsVenueId" value="{{fsVenueId}}">
-  <input type="hidden" id="fsVenueName" name="fsVenueName" value="{{fsVenueName}}">
-  <input type="hidden" id="fbUserId" name="fbUserId" value="{{fbUser.id}}">
-  <input type="hidden" id="fbUserDisplayName" name="fbUserDisplayName" value="{{fbUser.displayName}}">
-  <input type="hidden" id="routeName" name="routeName" value="{{routeName}}">
-  <label for="new-comment">Add a new comment for this venue...</label><br>
-	<textarea type="text" maxlength="255" rows="5" cols="100" id="newComment" name="newComment" class="mx-auto"></textarea><br>
-	<button type="submit">Submit</button>
-</form>
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md- mx-auto">
+    <form action="/api/comments" method="POST">
+      <input type="hidden" id="fsVenueId" name="fsVenueId" value="{{fsVenueId}}">
+      <input type="hidden" id="fsVenueName" name="fsVenueName" value="{{fsVenueName}}">
+      <input type="hidden" id="fbUserId" name="fbUserId" value="{{fbUser.id}}">
+      <input type="hidden" id="fbUserDisplayName" name="fbUserDisplayName" value="{{fbUser.displayName}}">
+      <input type="hidden" id="routeName" name="routeName" value="{{routeName}}">
+      <label for="new-comment">Add a new comment for this venue...</label><br>
+      <textarea type="text" maxlength="255" rows="5" cols="100" id="newComment" name="newComment" ></textarea><br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
 
 
 
