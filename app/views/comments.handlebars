@@ -22,8 +22,7 @@ RouteName = {{routeName}} --}}
 
 {{!-- embed map --}}
 <div class="row">
-  <iframe class="map" width="600" height="450" frameborder="0" style="border:0" src="" allowfullscreen>
-  </iframe>
+  <iframe class="map" width="600" height="450" frameborder="0" style="border:0" src="{{mapUrl}}" allowfullscreen></iframe> 
 </div>
 
 
@@ -46,7 +45,7 @@ function validateBarAddress() {
 
           var embedMap = "https://www.google.com/maps/embed/v1/directions?origin=";
           var currentLocation = "3401%20grays%20ferry%20ave" + "&destination=";
-          var key = "&key=" + "AIzaSyBUl9Z7Ak1vui_beP6_dTINgbnB9aNl5b4";
+          var key = "&key=" + process.env.EMBED_MAP_KEY;
           //"HIDE API KEY BEFORE UPLOADING ANYWHERE"
 
           var src = embedMap + currentLocation + barAddress + key;

@@ -1,6 +1,7 @@
 var path = require("path");
 var ensureLogin = require("connect-ensure-login");
 var db = require("../models");
+require("dotenv").config();
 
 
 module.exports = function(app) {
@@ -30,12 +31,36 @@ module.exports = function(app) {
      }
    })
 
+   //NEW CODE START//
+   console.log(chosenVenue);
+
+   var barAddress = chosenVenue[0].location.address;
+   var barAddressArray = barAddress.split("");
+  
+      for (let i = 0; i < barAddressArray.length; i++) {
+  
+        if (barAddressArray[i] === " ") {
+          barAddressArray.splice(i, 1, "%20");
+          barAddress = barAddressArray.join("");
+          console.log(barAddress);
+
+        }
+      };
+
+   var embedMap = "https://www.google.com/maps/embed/v1/directions?origin=";
+   var currentLocation = "3401%20grays%20ferry%20ave" + "&destination=";
+   var key = "&key=" + process.env.EMBED_MAP_KEY;
+
+   var src = embedMap + currentLocation + barAddress + key;
     var data = {
         routeName: req.params.venueName,
         fsVenueId: req.query.venue_id,
         fsVenueData: chosenVenue[0],
-        fbUser: req.user
+        fbUser: req.user,
+        mapUrl: src
     }
+
+    //ADDED mapURL: src line above to the data object. END REVISED CODE//
 
     console.log("=================================")
     console.log(data)
