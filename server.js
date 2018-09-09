@@ -7,7 +7,7 @@ var exphbs = require("express-handlebars");
 var cookieParser = require("cookie-parser");
 var expressSession = require("express-session");
 var morgan = require("morgan");
-var db = require("./app/models");
+var db = require("./models");
 require("dotenv").config();
 //var request = require('request');
 
@@ -19,13 +19,13 @@ app.engine(
   "handlebars",
   exphbs({
     defaultLayout: "main",
-    layoutsDir: path.join(__dirname, "app", "views", "layouts")
+    layoutsDir: path.join(__dirname, "views", "layouts")
   })
 );
 app.set("view engine", "handlebars");
-app.set("views", path.join(__dirname, "app", "views"));
+app.set("views", path.join(__dirname, "views"));
 
-app.use(express.static("./app/public"));
+app.use(express.static("./public"));
 app.use(morgan("combined"));
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -37,9 +37,9 @@ app.use(
     saveUnintialized: true
   })
 );
-require("./app/routing/loginRoutes.js")(app);
-require("./app/routing/apiRoutes")(app);
-require("./app/routing/htmlRoutes.js")(app);
+require("./routing/loginRoutes.js")(app);
+require("./routing/apiRoutes")(app);
+require("./routing/htmlRoutes.js")(app);
 
 
 var syncOptions = { force: false };

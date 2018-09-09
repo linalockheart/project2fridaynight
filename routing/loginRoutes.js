@@ -14,7 +14,7 @@ module.exports = function(app) {
       function(accessToken, refreshToken, profile, cb) {
         return cb(null, profile);
       }
-    
+
     )
   );
 
@@ -48,8 +48,8 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
- ;
-  
+
+
 };
 
 console.log("Consoling the strategy" + Strategy);

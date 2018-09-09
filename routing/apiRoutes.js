@@ -64,7 +64,7 @@ module.exports = function (app) {
   app.post("/api/comments",
     ensureLogin.ensureLoggedIn("/login"),
     function (req, res) {
-      
+
       var data = req.body;
 
 
@@ -74,11 +74,11 @@ module.exports = function (app) {
         fsVenueId: data.fsVenueId,
         body: data.newComment,
 
-        
+
       })
-      .then(function(results) {
-        res.redirect("/venue/" + data.routeName + "?venue_id=" + data.fsVenueId);
-      });
+        .then(function(results) {
+          res.redirect("/venue/" + data.routeName + "?venue_id=" + data.fsVenueId);
+        });
     });
 
 
