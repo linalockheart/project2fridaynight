@@ -25,40 +25,6 @@ RouteName = {{routeName}} --}}
   <iframe class="map" width="600" height="450" frameborder="0" style="border:0" src="{{mapUrl}}" allowfullscreen></iframe> 
 </div>
 
-
-{{!-- Google Map Script --}}
-<script>
-var barAddress = "{{fsVenueData.location.address}}";
-console.log(barAddress);
-
-function validateBarAddress() {
-    //event.preventDefault();
-      
-      var barAddressArray = barAddress.split("");
-  
-      for (let i = 0; i < barAddressArray.length; i++) {
-  
-        if (barAddressArray[i] === " ") {
-          barAddressArray.splice(i, 1, "%20");
-          barAddress = barAddressArray.join("");
-          console.log(barAddress);
-
-          var embedMap = "https://www.google.com/maps/embed/v1/directions?origin=";
-          var currentLocation = "3401%20grays%20ferry%20ave" + "&destination=";
-          var key = "&key=" + process.env.EMBED_MAP_KEY;
-          //"HIDE API KEY BEFORE UPLOADING ANYWHERE"
-
-          var src = embedMap + currentLocation + barAddress + key;
-
-          $(".map").attr("src", src);
-
-        }
-      };
-};
-
-validateBarAddress(event); 
-</script>
-
 <div class="container">
     <center><div class="row">
         <div class="col-xs-6 col-sm-6 col-md-3 mt-3">
