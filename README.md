@@ -32,6 +32,9 @@ When you arrive on the landing page, click Login with Facebook to verify your id
 
 <img alt="Add Comment Screenshot" src="#" style="width: 80px;">
 
+<h2>Demo</h2>
+https://www.useloom.com/share/b6836fc91b154d1399a2f21101e63513
+
 <h2>Future Development Goals</h2>
 <ul>
   <li>Image hosting</li>
